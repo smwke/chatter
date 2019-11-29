@@ -1,0 +1,10 @@
+<section class="phx-hero">
+  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
+  <p>A productive web framework that<br/>does not compromise speed or maintainability.</p>
+</section>
+
+<section class="row">
+  <h3>
+    <a href="/to-do-list">Go to the to do list</a>
+  </h3>
+</section>

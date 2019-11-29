@@ -1,0 +1,37 @@
+<div style="border: 1px solid gray; padding-left: 1.5em; padding-right: 1.5em; padding-top: 1em; margin-bottom: 1.5em;">
+<h2>Add a task</h2>
+
+<%= f = form_for @changeset, "#", [phx_submit: :send_task, autocomplete: :off] %>
+    <%= label f, :user %>
+    <%= text_input f, :user %>
+    <%= error_tag f, :user %>
+
+    <%= label f, :title %>
+    <%= text_input f, :title %>
+    <%= error_tag f, :title %>
+
+    <%= label f, :content %>
+    <%= text_input f, :content %>
+    <%= error_tag f, :content %>
+
+    <div>
+        <%= submit "Send", phx_disable_with: "Loading ..." %>
+    </div>
+</form>
+</div>
+
+<h1>Current tasks:</h1>
+
+<ul>
+    <%= for task <- @tasks do %>
+    <li>
+        <p> By <%= task.user %> </p>
+        <h4>
+            <strong><%= task.title %></strong>
+        </h4>
+        <p>
+            
+        </p>
+    </li>
+    <% end %>
+</ul>
